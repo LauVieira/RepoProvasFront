@@ -8,13 +8,50 @@ export default function UploadExam () {
     const [ name, setName ] = useState('');
     const [ type, setType ] = useState('');
     const [ url, setUrl ] = useState('');
+    const [ clicked, setClicked ] = useState(false);
+
+    function submitForm (event) {
+        event.preventDefault();
+        const fieldsFilled = checkFields();
+
+        if (fieldsFilled) {
+            setClicked(true);
+            proceedSubmiting();
+        }
+        else {
+            alert('Por favor, preencha todos os campos');
+        }
+    }
+
+    function checkFields () {
+        return type.length > 0 && name.length > 0 && url.length > 0; 
+    }
+
+    function proceedSubmiting () {
+        const request = axios.post(`http://localhost:3000/api/exams/${teacherId}/${subjectId}`, { name, url, type });
+        request.then(submitSucceeded);
+        request.catch(submitFailed);
+    }
+
+    function submitSucceeded () {
+        alert('Obrigada pela sua colaboração :)');
+        setClicked(false);
+        setType('');
+        setUrl('');
+        setName('');
+    }
+
+    function submitFailed () {
+        alert('Não foi possível enviar esta avaliação');
+        setClicked(false);
+    }
     
     return (
         <PageWrapper>
 
             <h1>Agora é só inserir os últimos dados :)</h1>
 
-            <Form onSubmit={}>
+            <Form  onSubmit={submitForm}>
                 <label htmlFor='url'>
                     Url da prova <br/ >
                     <input 
@@ -39,7 +76,7 @@ export default function UploadExam () {
 
                 <label htmlFor='type'>
                     Selecione o tipo de prova
-                    <Select defaultValue='' onChange={(e) => setType(e.target.value)} id='type'>
+                    <Select defaultValue='Prova:' onChange={(e) => setType(e.target.value)} id='type'>
                         <option value='P1'>P1</option>
                         <option value='P2'>P2</option>
                         <option value='P3'>P3</option>
@@ -49,7 +86,7 @@ export default function UploadExam () {
                     </Select>
                 </label>
 
-                <Button>
+                <Button disabled={clicked}>
                     Enviar
                 </Button>
 
@@ -106,6 +143,7 @@ const Button = styled.button`
     font-size: 6vw;
     font-weight: 600;
     margin-top: 40px;
+    opacity: ${ props => props.disabled ? 0.2 : 1 };
     padding: 8px 0;
     text-align: center;
     width: 60vw;
