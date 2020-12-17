@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Route } from 'react-router-dom';
-import TeacherOptions from './TeacherOptions';
-import SubjectOptions from './SubjectOptions';
+import PageContext from '../../contexts/PageContext';
+import TeacherOptions from '../TeacherOptions';
+import SubjectOptions from '../SubjectOptions';
 import UploadExam from './UploadExam';
 
 export default function UploadPage ({match}) {
+    const { setPageAim } = useContext(PageContext);
+
+    useEffect( ()=> setPageAim('enviar-prova'), []);
+    
     return (
         <>
             <Route 
@@ -20,7 +25,8 @@ export default function UploadPage ({match}) {
             <Route 
                 path={`${match.url}/`} 
                 exact={true} 
-                component={TeacherOptions}/>
+                component={TeacherOptions}
+            />
         </>
     );
 }

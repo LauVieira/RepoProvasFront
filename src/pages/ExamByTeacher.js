@@ -3,6 +3,6 @@ import styled from 'styled-components';
 
 export default function ExamByTeacher () {
     return (
-        <h1>Buscar por Professor</h1>
+        <h1>Exam by teacher</h1>
     );
 }

@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { BsFillPersonFill } from 'react-icons/bs';
+import PageContext from '../contexts/PageContext';
 
 export default function TeacherOptions () {
     const [ teachersList, setTeachersList ] = useState([]);
+    const { pageAim } = useContext(PageContext)
 
     useEffect(getTeachers, []);
 
@@ -22,9 +24,9 @@ export default function TeacherOptions () {
             </h1>
 
             {teachersList.length === 0
-                ? <p>Loading...</p>
+                ? <p>carregando...</p>
                 : <ul>
-                    {teachersList.map( teacher => <ListTeachers teacher={teacher} key={teacher.id} />)}
+                    {teachersList.map( teacher => <ListTeachers teacher={teacher} pageAim={pageAim} key={teacher.id} />)}
                 </ul>
             }
         </PageWrapper>
@@ -48,11 +50,11 @@ const PageWrapper = styled.main`
 `;
 
 function ListTeachers (props) {
-    const { teacher } = props;
+    const { teacher, pageAim } = props;
 
     return (
         <Li>
-            <Link to={`/enviar-prova/professor/${teacher.id}`}>
+            <Link to={`/${pageAim}/professor/${teacher.id}`}>
                 <BsFillPersonFill />  {teacher.name}
             </Link>
         </Li>
