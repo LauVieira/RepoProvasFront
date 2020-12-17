@@ -38,7 +38,7 @@ const MainPage = styled.main`
         color: #FFF;
         font-size: 6.5vw;
         font-weight: 700;
-        margin: 40vw 0 5vh 0;
+        margin: 20vw 0 5vh 0;
     }
 
     a {

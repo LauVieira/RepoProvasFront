@@ -1,8 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Route } from 'react-router-dom';
+import TeacherOptions from './TeacherOptions';
+import UploadExam from './UploadExam';
 
-export default function UploadPage () {
+export default function UploadPage ({match}) {
     return (
-        <h1>Enviar prova</h1>
+        <>
+            <Route path={`${match.url}/professor/:id`} component={UploadExam}/>
+            <Route exact path={`${match.url}/`} component={TeacherOptions}/>
+        </>
     );
 }
