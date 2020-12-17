@@ -19,26 +19,24 @@ export default function LandingPage () {
                 Buscar uma prova por disciplina
             </Link>
         
-            <Link to='/buscar/por-professor'>
+            <Link to='/buscar'>
                 Buscar uma prova por professor
             </Link>
         </MainPage>
     );
 }
 
-
-
-
 const MainPage = styled.main`
     align-items: center;
     display: flex;
     flex-direction: column;
     height: 100%;
+
     h1 {
         color: #FFF;
         font-size: 6.5vw;
         font-weight: 700;
-        margin: 40vw 0 5vh 0;
+        margin: 20vw 0 5vh 0;
     }
 
     a {
