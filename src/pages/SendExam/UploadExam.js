@@ -1,17 +1,12 @@
-import React from 'react';
-import { Route, useHistory, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 
 export default function UploadExam () {
-    const teacherId = useParams().id;
-
+    const { teacherId, subjectId } = useParams();
+    
     return (
-        <h1>{teacherId}</h1>
+        <h1>Teacher {teacherId}, subject {subjectId}</h1>
     );
 }
-
-const PageWrapper = styled.main`
-    height: 100%;
-`;
-
-// app.get('/api/teachers/:id/subjects', teachersController.getSubjectsByTeacher);

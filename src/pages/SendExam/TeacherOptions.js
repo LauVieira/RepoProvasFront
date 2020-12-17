@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { BsFillPersonFill } from 'react-icons/bs';
 
 export default function TeacherOptions () {
-    const [teachersList, setTeachersList] = useState([]);
+    const [ teachersList, setTeachersList ] = useState([]);
 
     useEffect(getTeachers, []);
 
@@ -18,8 +18,9 @@ export default function TeacherOptions () {
     return (
         <PageWrapper>
             <h1>
-                Oba! E de qual professor?
+                Oba! De qual professor?
             </h1>
+
             {teachersList.length === 0
                 ? <p>Loading...</p>
                 : <ul>
@@ -47,7 +48,7 @@ const PageWrapper = styled.main`
 `;
 
 function ListTeachers (props) {
-    const {teacher} = props;
+    const { teacher } = props;
 
     return (
         <Li>
@@ -55,12 +56,12 @@ function ListTeachers (props) {
                 <BsFillPersonFill />  {teacher.name}
             </Link>
         </Li>
-    )
+    );
 }
 
 const Li = styled.li`
     font-size: 6vw;
-    margin-bottom: 1vw;
+    margin-bottom: 2vw;
 
     svg {
         margin-bottom: -3px;

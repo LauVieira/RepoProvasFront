@@ -26,14 +26,12 @@ export default function LandingPage () {
     );
 }
 
-
-
-
 const MainPage = styled.main`
     align-items: center;
     display: flex;
     flex-direction: column;
     height: 100%;
+
     h1 {
         color: #FFF;
         font-size: 6.5vw;
