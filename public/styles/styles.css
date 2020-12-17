@@ -1,2 +1,11 @@
-@import url('');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+body {
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    padding: 20px 0;
+    width: 100%;
+}
 
