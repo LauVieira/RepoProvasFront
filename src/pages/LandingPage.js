@@ -19,7 +19,7 @@ export default function LandingPage () {
                 Buscar uma prova por disciplina
             </Link>
         
-            <Link to='/buscar'>
+            <Link to='/buscar/professor'>
                 Buscar uma prova por professor
             </Link>
         </MainPage>
