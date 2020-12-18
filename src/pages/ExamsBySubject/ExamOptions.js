@@ -12,7 +12,7 @@ export default function ExamOptions () {
     useEffect(getExams, []);
 
     function getExams () {
-        const request = axios.get(`http://localhost:3000/api/exams/subject/${subjectId}`);
+        const request = axios.get(`https://repoprovasback.herokuapp.com/api/exams/subject/${subjectId}`);
         request.then( response => organizeList(response.data));
         request.catch( () => alert('Não foi possível carregar a lista de provas, tente mais tarde'));
     }

@@ -11,7 +11,7 @@ export default function SubjectOptions () {
     useEffect(getSubjects, []);
 
     function getSubjects () {
-        const request = axios.get(`http://localhost:3000/api/teachers/${teacherId}/subjects `);
+        const request = axios.get(`https://repoprovasback.herokuapp.com/api/teachers/${teacherId}/subjects `);
         request.then( response => setSubjectsList(response.data));
         request.catch( () => alert('Não foi possível carregar a lista de professores, tente mais tarde'));
     }

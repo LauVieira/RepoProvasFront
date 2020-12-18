@@ -28,7 +28,7 @@ export default function UploadExam () {
     }
 
     function proceedSubmiting () {
-        const request = axios.post(`http://localhost:3000/api/exams/${teacherId}/${subjectId}`, { name, url, type });
+        const request = axios.post(`https://repoprovasback.herokuapp.com/api/exams/${teacherId}/${subjectId}`, { name, url, type });
         request.then(submitSucceeded);
         request.catch(submitFailed);
     }

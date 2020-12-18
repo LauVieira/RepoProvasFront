@@ -10,7 +10,7 @@ export default function TeacherOptions () {
     useEffect(getTeachers, []);
 
     function getTeachers () {
-        const request = axios.get('http://localhost:3000/api/teachers/list');
+        const request = axios.get('https://repoprovasback.herokuapp.com/api/teachers/list');
         request.then( response => setTeachersList(response.data));
         request.catch( () => alert('Não foi possível carregar a lista de professores, tente mais tarde'));
     }
