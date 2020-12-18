@@ -34,7 +34,7 @@ export default function ExamOptions () {    /// Até aqui está chegando
 
     return (
         <PageWrapper>
-            <h1>Selecione uma prova para ser encaminhade a seu endereço virtual :)</h1>
+            <h1>Selecione uma prova para ser encaminhada a seu endereço virtual :)</h1>
             {loading
                 ? <p>Carregando...</p>
                 : <ListExams examsObj={examsObj} /> 
