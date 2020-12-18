@@ -59,7 +59,7 @@ function ListSubjects (props) {
                 <RiBookletFill />  {subject.name}
             </Link>
         </Li>
-    )
+    );
 }
 
 const Li = styled.li`

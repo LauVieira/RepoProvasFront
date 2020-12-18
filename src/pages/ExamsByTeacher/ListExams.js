@@ -65,11 +65,3 @@ const Section = styled.section`
         margin-bottom: 6px;
     }
 `;
-
-
-// id: 12,
-// name: '2013.1',
-// type: 'P3',
-// url: 'https://www.youtube.com/watch?v=DkFJE8ZdeG8',
-// subject: 'Cálculo 3',
-// semester: '3'

@@ -11,7 +11,6 @@ export default function Header () {
     );
 }
 
-
 const StyledHeader = styled.header`
     background: rgba(250,250,250,0.3);
     font-size: 8vw;

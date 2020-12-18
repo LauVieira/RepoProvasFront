@@ -32,10 +32,6 @@ function DisplayExams (props) {
     );
 }
 
-
-
-// Ao clicar então em uma disciplina, são exibidas as provas agrupadas por tipo (P1, P2, etc), com o nome da prova e do professor que aplicou. Ao clicar na prova, abre-se o link do pdf.
-
 function PrintExam (props) {
     const { name, url, teacher } = props.exam;
 
@@ -69,11 +65,3 @@ const Section = styled.section`
         margin-bottom: 6px;
     }
 `;
-
-
-// // id: 12,
-// // name: '2013.1',
-// // type: 'P3',
-// // url: 'https://www.youtube.com/watch?v=DkFJE8ZdeG8',
-// // subject: 'Cálculo 3',
-// // semester: '3'

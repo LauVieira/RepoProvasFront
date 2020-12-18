@@ -4,7 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import ListExams from './ListExams';
 
-export default function ExamOptions () {    /// Até aqui está chegando
+export default function ExamOptions () {
     const { subjectId } = useParams();
     const [ loading, setLoading ] = useState(true);
     const [ examsObj, setExamsObj ] = useState({});
