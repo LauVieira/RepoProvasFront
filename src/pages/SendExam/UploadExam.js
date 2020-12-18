@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export default function UploadExam () {
     const { teacherId, subjectId } = useParams();
     const [ name, setName ] = useState('');
-    const [ type, setType ] = useState('');
+    const [ type, setType ] = useState('P1');
     const [ url, setUrl ] = useState('');
     const [ clicked, setClicked ] = useState(false);
 
@@ -76,7 +76,7 @@ export default function UploadExam () {
 
                 <label htmlFor='type'>
                     Selecione o tipo de prova
-                    <Select defaultValue='Prova:' onChange={(e) => setType(e.target.value)} id='type'>
+                    <Select defaultValue='P1' onChange={(e) => setType(e.target.value)} id='type'>
                         <option value='P1'>P1</option>
                         <option value='P2'>P2</option>
                         <option value='P3'>P3</option>

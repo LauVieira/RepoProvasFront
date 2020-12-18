@@ -1,14 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import { RiBookletFill } from 'react-icons/ri';
-import PageContext from '../contexts/PageContext';
 
 export default function SubjectOptions () {
     const { teacherId } = useParams();
     const [ subjectsList, setSubjectsList ] = useState([]);
-    const { pageAim } = useContext(PageContext);
 
     useEffect(getSubjects, []);
 
@@ -28,7 +26,7 @@ export default function SubjectOptions () {
                 ? <p>Carregando...</p>
                 : <ul>
                     {subjectsList.map( subject => 
-                        <ListSubjects subject={subject} teacherId={teacherId} pageAim={pageAim} key={subject.id} />
+                        <ListSubjects subject={subject} teacherId={teacherId} key={subject.id} />
                     )}
                 </ul>
             }
@@ -53,11 +51,11 @@ const PageWrapper = styled.main`
 `;
 
 function ListSubjects (props) {
-    const { subject, teacherId, pageAim } = props;
+    const { subject, teacherId } = props;
 
     return (
         <Li>
-            <Link to={`/${pageAim}/professor/${teacherId}/materia/${subject.id}`}>
+            <Link to={`/enviar-prova/professor/${teacherId}/materia/${subject.id}`}>
                 <RiBookletFill />  {subject.name}
             </Link>
         </Li>
